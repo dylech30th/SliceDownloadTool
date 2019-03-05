@@ -21,7 +21,7 @@ class SliceDownload private constructor(private val url: String, private val loc
     private var sliced: Array<Range?>
 
     init {
-        if (maxSlice >= 16) throw IllegalArgumentException("maxSlice cannot over 16")
+        if (maxSlice > 16) throw IllegalArgumentException("maxSlice cannot over 16")
         sliced = sliced()
     }
 
