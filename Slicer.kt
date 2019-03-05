@@ -64,7 +64,6 @@ class SliceDownload private constructor(private val url: String, private val loc
         val get = HttpGet(url)
         header?.forEach { k, v -> get.addHeader(k, v) }
         val client = HttpClients.createDefault()
-        EntityUtils.toString(client.execute(get).entity, StandardCharsets.UTF_8)
         return client.execute(get)
     }
 
